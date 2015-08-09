@@ -1,0 +1,38 @@
+<html ng-app="routerDemo">
+<head>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+  <script src="lib/ui-bootstrap.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <script src="lib/uuid.js"></script>
+  <style>
+  .rowFullWidth
+  {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    width:100%;
+  }
+  </style>
+</head>
+<body ng-controller="indexCtrl">
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="#">{{welcome}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="about">About</a></li>
+    </ul>
+  </nav>
+  <!-- MAIN CONTENT -->
+  <div class="container rowFullWidth">
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+  </div>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

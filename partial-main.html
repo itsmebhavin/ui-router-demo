@@ -1,0 +1,22 @@
+<h3>Main View</h3>
+<h4>Type: {{doctype}}</h4>
+<p>
+  Doc ID: {{docid}}
+</p>
+<div>
+  <tabset>
+    <tab ng-repeat="workspace in workspaces" active=workspace.active>
+      <tab-heading >{{workspace.name}} &nbsp;<a ng-click="removeTab($index)" href=''><i class="fa fa-remove fa-lg"></i></a></tab-heading>
+      <div   ng-init="workspace=workspace">
+        {{workspace.type}}
+        <div ui-view = 'vin' ng-if="workspace.type == 'VIN'"></div>
+        <div ui-view = 'asr' ng-if="workspace.type == 'ASR'"></div>
+      </div>
+    </tab>
+    <tab select="addWorkspace()">
+      <tab-heading>
+        <i class="fa fa-plus"></i>
+      </tab-heading>
+    </tab>
+  </tabset>
+</div>
